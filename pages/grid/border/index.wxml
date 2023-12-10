@@ -1,0 +1,7 @@
+<view class="block">
+  <t-grid border="{{border}}" theme="card" column="{{3}}" >
+    <t-grid-item text="{{item.title}}" image="{{item.img}}"  wx:for="{{list}}" bind:click="clickHandle" data-item="{{item}}" />
+    
+  </t-grid>
+</view>
+

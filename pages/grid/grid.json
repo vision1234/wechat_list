@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "功能列表",
+  "usingComponents": {
+    "border": "./border"
+  }
+}
