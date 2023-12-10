@@ -11,32 +11,31 @@ Component({
     ],
   },
   ready: function () {
+    let imgs=[];
+    for (let i = 0; i <= 1; i++) {
+      
+    wx.request({
+      url: 'https://api.qqsuu.cn/api/dm-littlesister?type=json&apiKey=b18fee09b7552ae303b705387c5d2525',
+      method: 'GET',
+      success: function (res) {
+        console.log('请求成功', res.data);
+        imgs.push(res.data.img)
+        console.log(imgs)
+      },
+      fail: function (error) {
+        console.error('请求失败', error);
+      }
+    });
+    
+    }
     this.setData({
-      images: [
-        'https://tdesign.gtimg.com/miniprogram/images/preview6.png',
-        'https://tdesign.gtimg.com/miniprogram/images/preview1.png',
-        'https://tdesign.gtimg.com/miniprogram/images/preview2.png',
-        'https://tdesign.gtimg.com/miniprogram/images/preview3.png',
-        'https://tdesign.gtimg.com/miniprogram/images/preview4.png',
-      ],
-      showIndex: true,
+      images: imgs,
+      showIndex: false,
       visible: true,
     });
   },
   methods: {
-    clickHandle() {
-      this.setData({
-        images: [
-          'https://tdesign.gtimg.com/miniprogram/images/preview6.png',
-          'https://tdesign.gtimg.com/miniprogram/images/preview1.png',
-          'https://tdesign.gtimg.com/miniprogram/images/preview2.png',
-          'https://tdesign.gtimg.com/miniprogram/images/preview3.png',
-          'https://tdesign.gtimg.com/miniprogram/images/preview4.png',
-        ],
-        showIndex: true,
-        visible: true,
-      });
-    },
+
     onChange(e) {
       const {
         detail: {
