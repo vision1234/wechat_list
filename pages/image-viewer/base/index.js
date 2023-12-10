@@ -6,13 +6,22 @@ Component({
     showIndex: false,
     closeBtn: false,
     deleteBtn: false,
-    images:  [
-      'https://tdesign.gtimg.com/miniprogram/images/preview6.png',
-      'https://tdesign.gtimg.com/miniprogram/images/preview1.png',
-      'https://tdesign.gtimg.com/miniprogram/images/preview2.png',
-      'https://tdesign.gtimg.com/miniprogram/images/preview3.png',
-      'https://tdesign.gtimg.com/miniprogram/images/preview4.png',
+    images: [
+
     ],
+  },
+  ready: function () {
+    this.setData({
+      images: [
+        'https://tdesign.gtimg.com/miniprogram/images/preview6.png',
+        'https://tdesign.gtimg.com/miniprogram/images/preview1.png',
+        'https://tdesign.gtimg.com/miniprogram/images/preview2.png',
+        'https://tdesign.gtimg.com/miniprogram/images/preview3.png',
+        'https://tdesign.gtimg.com/miniprogram/images/preview4.png',
+      ],
+      showIndex: true,
+      visible: true,
+    });
   },
   methods: {
     clickHandle() {
@@ -30,7 +39,9 @@ Component({
     },
     onChange(e) {
       const {
-        detail: { index },
+        detail: {
+          index
+        },
       } = e;
       Toast({
         context: this,
@@ -41,7 +52,9 @@ Component({
 
     onDelete(e) {
       const {
-        detail: { index },
+        detail: {
+          index
+        },
       } = e;
       Toast({
         context: this,
@@ -52,7 +65,9 @@ Component({
 
     onClose(e) {
       const {
-        detail: { trigger },
+        detail: {
+          trigger
+        },
       } = e;
       if (trigger === 'overlay') {
         Toast({
@@ -71,5 +86,29 @@ Component({
         visible: false,
       });
     },
+    onClose(e) {
+      const {
+        detail: {
+          trigger
+        },
+      } = e;
+      if (trigger === 'overlay') {
+        Toast({
+          context: this,
+          selector: '#t-toast',
+          message: '点击overlay关闭',
+        });
+      } else if (trigger === 'button') {
+        Toast({
+          context: this,
+          selector: '#t-toast',
+          message: `点击button关闭`,
+        });
+      }
+      this.setData({
+        visible: false,
+      });
+    },
+
   },
 });
