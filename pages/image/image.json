@@ -2,8 +2,8 @@
   "navigationBarTitleText": "Image",
   "navigationBarBackgroundColor": "#fff",
   "usingComponents": {
-    "t-image": "tdesign-miniprogram/image/image",
-    "base": "./base"
+    "t-image": "tdesign-miniprogram/image/image"
+  
 
   }
 }
