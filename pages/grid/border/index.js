@@ -15,7 +15,7 @@ Component({
         "img": '/images/卖家秀.png',
         "type": 'image',
         "url": 'https://api.qqsuu.cn/api/dm-littlesister?type=json&apiKey=b18fee09b7552ae303b705387c5d2525',
-        "next": true
+        // "next": true
       },
       {
         "title": "星座运势",
@@ -62,7 +62,9 @@ Component({
       {
         "title": "60秒读懂世界",
         "img": '/images/读懂世界.png',
-        "type": 'image'
+        "type": 'image',
+        "url": 'https://api.qqsuu.cn/api/dm-60s?type=img&apiKey=a5c54583a334f3820f18cdd9e30f0dca',
+        "file":true
       }, {
         "title": "英汉互译",
         "img": '/images/英汉互译.png',
@@ -97,18 +99,22 @@ Component({
   // wx.navigateTo({
   //   url: '/pages/pageB/pageB?param1=value1&param2=value2',
   // })
-  methods:{
+  methods: {
     clickHandle(e) {
-      let name=e.currentTarget.dataset.item.type;
+      let name = e.currentTarget.dataset.item.type;
+      let targetUrl = e.currentTarget.dataset.item.url;
       let path = `/pages/${name}/${name}`;
+      let file=e.currentTarget.dataset.item.file|false;
+      if(name=="image"){
       wx.navigateTo({
-        url: path,
+        url: path +"?file="+file+ "&url=" + targetUrl,
         fail: () => {
           wx.navigateTo({
             url: '/pages/home/navigateFail/navigateFail',
           });
         },
       });
+    }
     },
   }
 });

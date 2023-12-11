@@ -26,8 +26,9 @@ Component({
         console.error('请求失败', error);
       }
     });
-    
-    }
+    imgs=['/images/价格.png',
+    'https://tdesign.gtimg.com/miniprogram/images/preview1.png'];
+    };
     this.setData({
       images: imgs,
       showIndex: false,

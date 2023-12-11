@@ -1,7 +1,7 @@
 <view class="demo">
-  
-    <base />
-
+  <scroll-view scroll-x="true" bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" bindtouchend="onTouchEnd" style="white-space: nowrap; overflow: hidden; width: 100%;">
+    <t-image src="{{imageSrc}}" mode="widthFix" width="100%" aria-label="一个放置在墙角的黄色行李箱" />
+  </scroll-view>
 
 
 </view>
