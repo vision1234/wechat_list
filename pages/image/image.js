@@ -4,16 +4,18 @@ let touchMoveX = 0;
 
 Page({
   data: {
-
+    file:'',
     imageSrc: '/images/01324.jpg',
 
     refreshHintLeft: -100, // 初始位置在屏幕左侧
   },
   onLoad: function (options){
+    this.setData({
+      file: options.file,
+    });
     let url=options.url
-    let file=options.file
     console.log(url)
-    if(file){
+    if(this.data.file){
       this.setData({
         imageSrc: url,
       });
@@ -74,7 +76,7 @@ Page({
     // 模拟刷新后更新数据
     const pages = getCurrentPages();
     // 获取当前页面的路径
-    const currentPage = "/" + pages[pages.length - 1].route;
+    const currentPage = "/" + pages[pages.length - 1].route+"?file="+this.data.file+"&url="+this.data.imageSrc;
     console.log(currentPage)
     wx.navigateTo({
       url: currentPage,

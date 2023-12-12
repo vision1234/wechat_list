@@ -52,7 +52,7 @@ const form = {
         },
         {
             name: 'Textarea',
-            label: '多行文本框',
+            label: '英汉互译',
         },
         {
             name: 'TreeSelect',

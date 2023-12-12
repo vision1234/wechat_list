@@ -1,8 +1,6 @@
 {
-  "navigationBarTitleText": "Cell",
+  "navigationBarTitleText": "Cell 星座选择",
   "usingComponents": {
-    "base": "./base",
-    "multiple": "./multiple",
-    "theme": "./theme"
+    "base": "./base"
   }
 }

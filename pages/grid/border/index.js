@@ -64,7 +64,7 @@ Component({
         "img": '/images/读懂世界.png',
         "type": 'image',
         "url": 'https://api.qqsuu.cn/api/dm-60s?type=img&apiKey=a5c54583a334f3820f18cdd9e30f0dca',
-        "file":true
+        "file": true
       }, {
         "title": "英汉互译",
         "img": '/images/英汉互译.png',
@@ -82,7 +82,9 @@ Component({
       {
         "title": "摸鱼人日历",
         "img": '/images/摸鱼.png',
-        "type": 'image'
+        "type": 'image',
+        "url": 'https://api.qqsuu.cn/api/dm-moyu?type=img&apiKey=0f140737dc9825c3afddfa9792d411c8',
+        "file": true
       }, {
         "title": "渣男语录",
         "img": '/images/渣男语录.png',
@@ -104,17 +106,36 @@ Component({
       let name = e.currentTarget.dataset.item.type;
       let targetUrl = e.currentTarget.dataset.item.url;
       let path = `/pages/${name}/${name}`;
-      let file=e.currentTarget.dataset.item.file|false;
-      if(name=="image"){
-      wx.navigateTo({
-        url: path +"?file="+file+ "&url=" + targetUrl,
-        fail: () => {
-          wx.navigateTo({
-            url: '/pages/home/navigateFail/navigateFail',
-          });
-        },
-      });
+      let file = e.currentTarget.dataset.item.file | false;
+      let title=e.currentTarget.dataset.item.title;
+      if (name == "image") {
+        wx.navigateTo({
+          url: path + "?file=" + file + "&url=" + targetUrl,
+          fail: () => {
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      } else if (name == "star") {
+        wx.navigateTo({
+          url: "/pages/cell/cell",
+          fail: () => {
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      }else if (name == "text") {
+        wx.navigateTo({
+          url: "/pages/collapse/collapse?name="+title,
+          fail: () => {
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      }
     }
-    },
   }
 });

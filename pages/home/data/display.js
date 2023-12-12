@@ -8,15 +8,15 @@ const display = {
         },
         {
             name: 'Badge',
-            label: '徽标',
+            label: '星座',
         },
         {
             name: 'Cell',
-            label: '单元格',
+            label: '星座选择',
         },
         {
             name: 'Collapse',
-            label: '折叠面板',
+            label: '文本居中',
         },
         {
             name: 'CountDown',

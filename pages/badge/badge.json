@@ -1,8 +1,6 @@
 {
-  "navigationBarTitleText": "Badge",
+  "navigationBarTitleText": "星座运势",
   "usingComponents": {
-    "base": "./base",
-    "theme": "./theme",
-    "size": "./size"
+    
   }
 }

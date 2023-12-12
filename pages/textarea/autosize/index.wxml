@@ -1,1 +1,25 @@
-<t-textarea label="标签文字" placeholder="请输入文字" disableDefaultPadding="{{true}}" autosize />
+<t-demo title="{{name}}" desc="回车开始查询">
+  <view class="textarea-example">
+  <t-textarea
+    t-class="external-class"
+    placeholder="请输入文字"
+    maxlength="5000"
+    indicator
+    disableDefaultPadding="{{true}}"
+    style="{{style}}"
+    bindinput="onTextareaInput"
+    value="{{inputText}}"
+  />
+  </view>
+<t-button theme="light" variant="outline" size="large" class="bbtt" bindtap="fanyi">翻译文本</t-button>
+<view class="textarea-example">
+<t-textarea
+    t-class="external-class"
+    placeholder="翻译结果"
+    indicator
+    disabled
+    disableDefaultPadding="{{true}}"
+    style="{{style}}"
+  />
+</view>
+</t-demo>

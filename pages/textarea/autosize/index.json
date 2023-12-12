@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "t-textarea": "tdesign-miniprogram/textarea/textarea"
+    "t-textarea": "tdesign-miniprogram/textarea/textarea",
+    "t-button": "tdesign-miniprogram/button/button"
   }
 }

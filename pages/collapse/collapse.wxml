@@ -1,4 +1,4 @@
 <!-- WXML 文件 -->
 <view class="container">
-  <text class="centered-text">文本内容</text>
+  <text class="centered-text">{{text}}</text>
 </view>

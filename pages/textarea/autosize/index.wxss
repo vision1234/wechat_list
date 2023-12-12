@@ -1,0 +1,11 @@
+.bbtt{
+margin: 50rpx 50rpx 50rpx 40rpx;
+}
+.textarea-example {
+  margin: 0 32rpx;
+  background-color: #fff;
+  border-radius: 18rpx;
+}
+.external-class{
+  min-height: 200rpx;
+}

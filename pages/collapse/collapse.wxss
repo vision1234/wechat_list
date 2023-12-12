@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh; /* 设置容器高度，保证垂直居中 */
+  margin: 50rpx;
 }
 
 
