@@ -22,11 +22,7 @@ Component({
         "img": '/images/星座.png',
         "type": 'star'
       },
-      {
-        "title": "网抑云随机歌曲",
-        "img": '/images/网抑云.png',
-        "type": 'download'
-      }, {
+       {
         "title": "实时油价",
         "img": '/images/价格.png',
         "type": 'you'
@@ -54,11 +50,7 @@ Component({
         "title": "舔狗日记",
         "img": '/images/舔狗日记.png',
         "type": 'text'
-      }, {
-        "title": "每日简报",
-        "img": '/images/报纸.png',
-        "type": 'news'
-      },
+      }, 
       {
         "title": "60秒读懂世界",
         "img": '/images/读懂世界.png',
@@ -74,11 +66,7 @@ Component({
         "title": "周公解梦",
         "img": '/images/周公解梦.png',
         "type": 'fanyi'
-      }, {
-        "title": "收货地址解析",
-        "img": '/images/地址.png',
-        "type": 'fanyi'
-      },
+      }, 
       {
         "title": "摸鱼人日历",
         "img": '/images/摸鱼.png',
@@ -90,11 +78,7 @@ Component({
         "img": '/images/渣男语录.png',
         "type": 'text'
       },
-      {
-        "title": "随机各类头像",
-        "img": '/images/头像.png',
-        "type": 'image'
-      },
+
     ]
   },
   // 在 pageA 页面的相应事件处理函数中
@@ -107,7 +91,7 @@ Component({
       let targetUrl = e.currentTarget.dataset.item.url;
       let path = `/pages/${name}/${name}`;
       let file = e.currentTarget.dataset.item.file | false;
-      let title=e.currentTarget.dataset.item.title;
+      let title = e.currentTarget.dataset.item.title;
       if (name == "image") {
         wx.navigateTo({
           url: path + "?file=" + file + "&url=" + targetUrl,
@@ -126,9 +110,51 @@ Component({
             });
           },
         });
-      }else if (name == "text") {
+      } else if (name == "text") {
         wx.navigateTo({
-          url: "/pages/collapse/collapse?name="+title,
+          url: "/pages/collapse/collapse?name=" + title,
+          fail: () => {
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      } else if (name == "fanyi") {
+        let but = "翻译文本"
+        if (title == "周公解梦")
+          but = "解析梦境"
+        else if (title == "收货地址解析")
+          but = "解析结果"
+        wx.navigateTo({
+          url: "/pages/textarea/textarea?name=" + title + "&but=" + but,
+          fail: (e) => {
+            console.log(e)
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      }else if (name == "you") {
+        wx.navigateTo({
+          url: "/pages/picker/picker",
+          fail: () => {
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      }else if (name == "caipu") {
+        wx.navigateTo({
+          url: "/pages/progress/progress",
+          fail: () => {
+            wx.navigateTo({
+              url: '/pages/home/navigateFail/navigateFail',
+            });
+          },
+        });
+      }else if (name == "video") {
+        wx.navigateTo({
+          url: "/pages/empty/empty",
           fail: () => {
             wx.navigateTo({
               url: '/pages/home/navigateFail/navigateFail',

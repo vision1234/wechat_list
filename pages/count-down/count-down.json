@@ -1,8 +1,6 @@
 {
-  "navigationBarTitleText": "CountDown",
+  "navigationBarTitleText": "IT资讯",
   "navigationBarBackgroundColor": "#fff",
   "usingComponents": {
-    "base": "./base",
-    "size": "./size"
   }
 }

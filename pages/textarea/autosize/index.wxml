@@ -1,4 +1,4 @@
-<t-demo title="{{name}}" desc="回车开始查询">
+<t-demo title="{{name}}">
   <view class="textarea-example">
   <t-textarea
     t-class="external-class"
@@ -7,15 +7,15 @@
     indicator
     disableDefaultPadding="{{true}}"
     style="{{style}}"
-    bindinput="onTextareaInput"
+    bindchange="onTextareaInput"
     value="{{inputText}}"
   />
   </view>
-<t-button theme="light" variant="outline" size="large" class="bbtt" bindtap="fanyi">翻译文本</t-button>
+<t-button theme="light" variant="outline" size="large" class="bbtt" bindtap="fanyi">{{but}}</t-button>
 <view class="textarea-example">
 <t-textarea
     t-class="external-class"
-    placeholder="翻译结果"
+    placeholder="输出结果"
     indicator
     disabled
     disableDefaultPadding="{{true}}"

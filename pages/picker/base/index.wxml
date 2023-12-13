@@ -1,32 +1,20 @@
-<t-cell class="mb-16" title="选择城市" arrow hover note="{{cityText}}" bind:click="onCityPicker" />
+<t-cell class="mb-16" title="选择省份" arrow hover note="{{cityText}}" bind:click="onCityPicker" />
 
-<t-cell class="mb-16" title="选择时间" arrow hover note="{{dateText}}" bind:click="onSeasonPicker" />
-
-<t-picker
-  visible="{{cityVisible}}"
-  value="{{cityValue}}"
-  data-key="city"
-  title="选择城市"
-  cancelBtn="取消"
-  confirmBtn="确认"
-  bindchange="onPickerChange"
-  bindpick="onColumnChange"
-  bindcancel="onPickerCancel"
->
+<t-picker visible="{{cityVisible}}" value="{{cityValue}}" data-key="city" title="选择省份" cancelBtn="取消" confirmBtn="确认" bindchange="onPickerChange" bindpick="onColumnChange" bindcancel="onPickerCancel">
   <t-picker-item options="{{citys}}"></t-picker-item>
 </t-picker>
+<view class="container">
+  <view class="fortune-item" wx:for="{{datas}}" wx:key="index" wx:if="{{item.name == '省份'}}">
+    <view class="type">{{item.name}}</view>
+    <view class="content">{{item.value}}</view>
+  </view>
+  <view class="fortune-item" wx:for="{{datas}}" wx:key="index" wx:if="{{item.name !== '更新时间'&&item.name !== '省份'}}">
+    <view class="type">{{item.name}}</view>
+    <view class="content">{{item.value}}元</view>
+  </view>
 
-<t-picker
-  visible="{{dateVisible}}"
-  value="{{dateValue}}"
-  data-key="date"
-  title="选择时间"
-  cancelBtn="取消"
-  confirmBtn="确认"
-  bindchange="onPickerChange"
-  bindpick="onColumnChange"
-  bindcancel="onPickerCancel"
->
-  <t-picker-item options="{{years}}"></t-picker-item>
-  <t-picker-item options="{{seasons}}"></t-picker-item>
-</t-picker>
+  <view class="fortune-item" wx:for="{{datas}}" wx:key="index" wx:if="{{item.name == '更新时间'}}">
+    <view class="type">{{item.name}}</view>
+    <view class="content">{{item.value}}</view>
+  </view>
+</view>

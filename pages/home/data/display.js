@@ -20,7 +20,7 @@ const display = {
         },
         {
             name: 'CountDown',
-            label: '倒计时',
+            label: 'it资讯',
         },
         {
             name: 'Empty',

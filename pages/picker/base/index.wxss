@@ -1,3 +1,33 @@
 .mb-16 {
   margin-bottom: 32rpx;
 }
+/* index.wxss */
+.container {
+  padding: 20rpx;
+  background-color: white;
+  /* border-radius: 2%; */
+  margin: 20rpx;
+}
+
+.header {
+  font-size: 50rpx;
+  font-weight: bold;
+  color: black; /* 深色字体 */
+  margin-bottom: 20rpx;
+}
+
+.fortune-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+  padding: 10rpx 0;
+}
+
+.type {
+  color: black; /* 主色调 */
+  font-weight: bold;
+}
+
+.content {
+  color: #666;
+}

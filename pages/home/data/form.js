@@ -24,7 +24,7 @@ const form = {
         },
         {
             name: 'Picker',
-            label: '选择器',
+            label: '实时油价',
         },
         {
             name: 'Radio',

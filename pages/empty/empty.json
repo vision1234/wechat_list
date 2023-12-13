@@ -1,9 +1,6 @@
 {
-  "navigationBarTitleText": "Empty",
+  "navigationBarTitleText": "视频",
   "navigationBarBackgroundColor": "#fff",
   "usingComponents": {
-    "base": "./base",
-    "imageEmpty": "./imageEmpty",
-    "buttonEmpty": "./buttonEmpty"
   }
 }

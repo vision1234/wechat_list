@@ -1,22 +1,19 @@
-<view class="demo">
-  <view class="demo-title">Progress 进度条</view>
-  <view class="demo-desc">在导航栏下方，用于给用户显示提示消息</view>
-  <t-demo title="01 组件类型" desc="基础进度条" padding>
-    <base />
-  </t-demo>
-  <t-demo desc="过渡样式" padding>
-    <transition />
-  </t-demo>
-  <t-demo desc="自定义颜色/圆角" padding>
-    <custom />
-  </t-demo>
-  <t-demo title="02 组件状态" desc="线性进度条" padding>
-    <line />
-  </t-demo>
-  <t-demo desc="百分比内显进度条" padding>
-    <plump />
-  </t-demo>
-  <t-demo desc="环形进度条" padding>
-    <circle />
-  </t-demo>
+<!-- 在 wxml 文件中 -->
+<view>
+  <view class="example-search">
+  <t-search model:value="{{value}}" placeholder="搜索菜名" />
+</view>
+  <view wx:for="{{list}}" wx:for-item="item" wx:key="id" class="dish-card">
+
+    <view class="dish-info">
+      <view class="dish-name">{{item.cp_name}}</view>
+      <view class="dish-type">{{item.type_name}}</view>
+      <view class="dish-description">{{item.texing}}</view>
+    </view>
+    <!-- <view>{{item.zuofa.split(';')}}</view> -->
+    <view class="cook-steps">
+      {{item.zuofa}}
+      
+    </view>
+  </view>
 </view>

@@ -1,7 +1,7 @@
 <view class="demo">
 
   <t-demo title="" >
-    <autosize />
+    <autosize name="{{name}}" but="{{but}}" />
   </t-demo>
   
 </view>

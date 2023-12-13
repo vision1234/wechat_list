@@ -1,35 +1,35 @@
+// 在 js 文件中
 Page({
-    data: {
-        time: 96 * 60 * 1000,
-        time1: 46 * 60 * 1000,
-        timeData: {},
-        counting: false,
-    },
-    onChange(e) {
+  data: {
+    newsList: [
+      
+      // 其他新闻项...
+    ]
+  },
+  onLoad: function () {
+    wx.request({
+      url: "https://api.qqsuu.cn/api/dm-it?num=10&apiKey=8f8bfb0ea586f5f93bc53254e72c63f8" ,
+      method: 'GET',
+      success: (res) => {
+        console.log('请求成功', res.data.data);
+        let newsList = res.data.data.newslist;
+
+       
         this.setData({
-            timeData: e.detail,
+          newsList: newsList
         });
-    },
-    start() {
-        const countDown = this.selectComponent('.control-count-down');
-        if (!countDown.counting) {
-            countDown.start();
-            this.setData({ counting: true });
-        }
-        else {
-            countDown.pause();
-            this.setData({ counting: false });
-        }
-    },
-    reset() {
-        const countDown = this.selectComponent('.control-count-down');
-        countDown.reset();
-    },
-    finished() {
-        wx.showToast({
-            icon: 'none',
-            title: '倒计时结束',
-        });
-        this.setData({ counting: false });
-    },
+      },
+      fail: (error) => {
+        console.error('请求失败', error);
+      }
+    });
+  },
+  redirectToDetail: function (event) {
+    const index = event.currentTarget.dataset.index;
+    const url = this.data.newsList[index].url;
+    // 跳转到详情页
+    wx.navigateTo({
+      url: '/pages/detail/detail?url=' + encodeURIComponent(url)
+    });
+  }
 });

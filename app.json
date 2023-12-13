@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/button/button",
+    "pages/grid/grid",
     "pages/tabs/tabs",
     "pages/icon/icon",
     "pages/loading/loading",
@@ -36,7 +35,7 @@
     "pages/divider/divider",
     "pages/empty/empty",
     "pages/back-top/back-top",
-    "pages/grid/grid",
+   
     "pages/upload/upload",
     "pages/count-down/count-down",
     "pages/overlay/overlay",
