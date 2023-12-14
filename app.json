@@ -1,20 +1,14 @@
 {
   "pages": [
-    "pages/grid/grid",
-    "pages/tabs/tabs",
+    "pages/home/home",
     "pages/icon/icon",
-    "pages/loading/loading",
     "pages/progress/progress",
-    "pages/cascader/cascader",
     "pages/cell/cell",
-    "pages/cell-group/cell-group",
     "pages/collapse/collapse",
-    "pages/input/input",
-    "pages/badge/badge",
+    "pages/star/star",
     "pages/textarea/textarea",
     "pages/message/message",
     "pages/toast/toast",
-    "pages/stepper/stepper",
     "pages/slider/slider",
     "pages/radio/radio",
     "pages/switch/switch",
@@ -33,11 +27,9 @@
     "pages/skeleton/skeleton",
     "pages/footer/footer",
     "pages/divider/divider",
-    "pages/empty/empty",
     "pages/back-top/back-top",
    
     "pages/upload/upload",
-    "pages/count-down/count-down",
     "pages/overlay/overlay",
     "pages/image/image",
     "pages/search/search",
@@ -45,11 +37,10 @@
     "pages/navbar/navbar",
     "pages/date-time-picker/date-time-picker",
     "pages/notice-bar/notice-bar",
-    "pages/image-viewer/image-viewer",
+     "pages/image-viewer/image-viewer",
     "pages/result/result",
     "pages/result/result-page",
-    "pages/link/link",
-    "pages/ivier"
+    "pages/link/link"
   ],
   "subpackages": [
     {
@@ -73,8 +64,8 @@
       "pages": ["dialog"]
     },
     {
-      "root": "pages/picker/",
-      "pages": ["picker"]
+      "root": "pages/you/",
+      "pages": ["you"]
     },
     {
       "root": "pages/rate/",

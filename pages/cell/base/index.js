@@ -53,7 +53,7 @@ Component({
   methods: {
     clickHandle(e) {
       let name = e.currentTarget.dataset.item.title;
-      let path = '/pages/badge/badge';
+      let path = '/pages/star/star';
       wx.navigateTo({
         url: path +"?xz="+name,
         fail: () => {

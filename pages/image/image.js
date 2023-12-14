@@ -5,7 +5,7 @@ let touchMoveX = 0;
 Page({
   data: {
     file:'',
-    imageSrc: '/images/01324.jpg',
+    imageSrc: '',
 
     refreshHintLeft: -100, // 初始位置在屏幕左侧
   },

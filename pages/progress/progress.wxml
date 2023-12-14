@@ -1,7 +1,7 @@
 <!-- 在 wxml 文件中 -->
 <view>
   <view class="example-search">
-  <t-search model:value="{{value}}" placeholder="搜索菜名" />
+  <t-search model:value="{{value}}" bind:submit="search" placeholder="搜索菜名" />
 </view>
   <view wx:for="{{list}}" wx:for-item="item" wx:key="id" class="dish-card">
 

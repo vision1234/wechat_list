@@ -6,14 +6,27 @@ Page({
 
   onLoad: function () {
     // 模拟异步请求数据
-    setTimeout(() => {
-      const newData = 
-      [{"id":5039,"type_id":444,"type_name":"蔬菜类","cp_name":"豆豉辣椒","zuofa":"1.豆豉洗净；辣椒洗净，切丁；蒜切末；2.锅内放油，烧热，爆香蒜末和豆豉，放入辣椒煸炒，加入酱油、酒、糖、盐炒匀即可。","texing":"咸香微辣，豉香诱人。","tishi":"如果加点肉末，这道菜会更鲜美。","tiaoliao":"食用油30克；酱油1/2大匙(15克)；料酒1大匙(30克)；豆豉1大匙(30克)；精盐1小匙(3克)；白糖1/2小匙(1.5克)","yuanliao":"红辣椒450克；青辣椒2个；大蒜6瓣"},{"id":5038,"type_id":444,"type_name":"蔬菜类","cp_name":"虎皮辣椒","zuofa":"1.将辣椒洗净，去蒂及籽，用刀平剖成两半；2.把醋、白糖、酱油、料酒同放入碗内，调成糖醋汁；3.锅内放油烧热，投入辣椒，用小火煎至表皮出现斑点时，烹入糖醋汁，搅拌均匀即成。","texing":"酸中带甜，香脆爽口。","tishi":"最好选用刚上市的嫩辣椒，口感更为鲜嫩。","tiaoliao":"食用油50克；酱油3小匙(9克)；料酒少许；香醋1/2大匙(15克)；白糖1/2大匙(15克)","yuanliao":"红辣椒100克；青辣椒200克"},{"id":3834,"type_id":65,"type_name":"川菜","cp_name":"辣椒鱼","zuofa":"1.将鱼收拾洗净加腌料腌半小时泡油；2.下油二汤匙,爆香葱,辣椒粉,下鱼,下酒半汤匙炒匀勾芡,再炒数下上碟；3.珍珠叶洗净,把叶摘下,抹干,放落滚油中，炸脆放入盘中即可。","texing":"","tishi":"","tiaoliao":"","yuanliao":"鲜鱼一条,珍珠叶六两,葱二条切碎,辣椒粉半汤匙糖一茶匙,生抽二汤匙,盐半茶匙姜汁半汤匙,老抽一汤匙,蛋白一汤匙半,生粉一汤匙,油一汤匙。"},{"id":3673,"type_id":110,"type_name":"泡渍类","cp_name":"辣椒什锦菜","zuofa":"将辣椒洗净切成片，去籽，萝卜，红萝卜，芥兰头去皮，切成薄片，一起用盐4小时，放入白醋，装入缸，7天后可食用。密封存放。","texing":"味咸酸，快胃。","tishi":"","tiaoliao":"","yuanliao":"辣椒，5000克；萝卜，8000克；红萝卜，8000克；芥兰头，8000克；盐，5000克；白醋，3000克。"}
-      ]
+    
       
-      this.setData({
-        list: newData
-      });
-    }, 1000); // 模拟延迟1秒钟，实际中请替换为真实的异步请求
+   
+  },
+  search: function (e) {
+    console.log()
+    let url="https://api.qqsuu.cn/api/dm-caipu?apiKey=42b2fd67605ac19a72e75a1daeed27ab&word="+e.detail.value;
+    wx.request({
+      url: url,
+      method: 'GET',
+      success: (res) => {
+        console.log('请求成功', res.data.data.list);  
+        
+        this.setData({
+          list: res.data.data.list
+        });
+      },
+      fail: (error) => {
+        console.error('请求失败', error);
+      }
+    });
+     
   }
 });

@@ -1,13 +1,8 @@
 {
   "navigationBarTitleText": "查询",
   "usingComponents": {
-    "base": "./base",
-    "label": "./label",
-    "autosize": "./autosize",
-    "disabled": "./disabled",
-    "maxcharacter": "./maxcharacter",
-    "maxlength": "./maxlength",
-    "card": "./card",
-    "custom": "./custom"
+   
+    "autosize": "./autosize"
+   
   }
 }

@@ -9,6 +9,7 @@
     style="{{style}}"
     bindchange="onTextareaInput"
     value="{{inputText}}"
+    autosize
   />
   </view>
 <t-button theme="light" variant="outline" size="large" class="bbtt" bindtap="fanyi">{{but}}</t-button>
@@ -20,6 +21,8 @@
     disabled
     disableDefaultPadding="{{true}}"
     style="{{style}}"
+    value="{{text}}"
+    autosize
   />
 </view>
 </t-demo>
